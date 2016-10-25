@@ -14,19 +14,22 @@ Three bash scripts are provided to run, stop and check status of the web server.
 of the AWS CLI. To permit multiple stack instances to be run concurrently, each bash script accepts an optional [stackname].
 If the optional [stackname] is not provided, the default stack name is Stelligent.
 
-* template.json      : CloudFormation Template defining a t1.micro Linux environment with a simple PHP web server application.
+* template.json      : CloudFormation Template defining a t1.micro Linux environment with a simple PHP web server
 
 * run_mini_project   : bash helper script to create stack using template.json
-                       Usage : ./run_mini_project [stackname]
                        users may also manually create the stack with a single aws cloudformation create-stack instruction
 
+    Usage : ./run_mini_project [stackname]
+
 * stop_mini_project  : bash helper script to delete stack
-                       Usage : ./run_mini_project [stackname]
                        users may also manually delete the stack with a single aws cloudformation delete-stack instruction
 
+   Usage : ./run_mini_project [stackname]
+
 * check_mini_project : bash script to display status of stack and verify web server displays Automation for the People
-                       Usage:  ./check_mini_project [stackname]
 		       users may also continuously monitor status  (e.g. watch -n 10 ./check_mini_project [stackname])
+
+   Usage:  ./check_mini_project [stackname]
 
 ## Installation
 
