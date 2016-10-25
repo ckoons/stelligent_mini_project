@@ -1,0 +1,17 @@
+#!/bin/bash
+
+# stop_micro_project uses the AWS CLI to to delete cloudformation stack defining a web server that produces a static web page
+#    The stop_micro_project script accepts one OPTIONAL parameter ($1) the STACKNAME default STACKNAME is Stelligent
+#
+STACKNAME=${1-Stelligent}
+
+# Require the aws cli be installed
+AWS=$(which aws)
+if [ -z "$AWS" ]
+then
+  echo "Error: AWS CLI must be installed for $0 to run, please see: http://docs.aws.amazon.com/cli/latest/userguide/installing.html"
+  exit
+fi
+
+aws cloudformation delete-stack --stack-name "$STACKNAME"
+
